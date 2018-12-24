@@ -29,5 +29,4 @@ describe('Spotify Wrapper', () => {
       expect(searchPlaylists).toBeTruthy();
     });
   });
-
 });
