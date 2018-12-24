@@ -9,8 +9,7 @@
     "test:tdd": "jest --watch",
     "dev": "webpack-dev-server",
     "lint": "eslint . --fix",
-    "build": "webpack",
-    "prepush": "eslint . && jest"
+    "build": "webpack"
   },
   "author": "Andre L. Adriano",
   "license": "MIT",
@@ -26,6 +25,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.2.1",
     "jest": "^23.6.0",
     "regenerator-runtime": "^0.13.1",
     "webpack": "^4.28.2",
@@ -35,5 +35,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "ramda": "^0.26.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "eslint . && jest"
+    }
   }
 }
