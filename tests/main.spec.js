@@ -34,14 +34,39 @@ describe('Spotify Wrapper', () => {
   });
 
   describe('Generic Search', () => {
+    let spyGet;
+    beforeEach(() => {
+      spyGet = jest.spyOn(axios, 'get');
+    });
+    afterEach(() => {
+      spyGet.mockRestore();
+    });
+
     it('should call an ajax function to the endpoint', () => {
-      const mockedResponse = {};
-      const spy = jest.spyOn(axios, 'get');
-
-      axios.get.mockResolvedValue(mockedResponse);
       search();
+      expect(spyGet).toHaveBeenCalled();
+    });
 
-      expect(spy).toHaveBeenCalled();
+    describe('should receive the correct parameters to fetch', () => {
+      it('for one type', () => {
+        search('Mother Mother', 'artist');
+        expect(spyGet).toHaveBeenCalledWith('https://api.spotify.com/v1/search', {
+          params: {
+            q: 'Mother Mother',
+            type: 'artist',
+          },
+        });
+      });
+
+      it('for more than one type', () => {
+        search('Mother Mother', ['artist', 'music']);
+        expect(spyGet).toHaveBeenCalledWith('https://api.spotify.com/v1/search', {
+          params: {
+            q: 'Mother Mother',
+            type: ['artist', 'music'],
+          },
+        });
+      });
     });
   });
 });
