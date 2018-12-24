@@ -5,27 +5,35 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:tdd": "jest --watch",
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "lint": "eslint . --fix",
+    "build": "webpack",
+    "prepush": "eslint . && jest"
   },
   "author": "Andre L. Adriano",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "babel-cli": "^6.26.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.11.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "ramda": "^0.26.1"
   }
 }
