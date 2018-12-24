@@ -12,6 +12,9 @@
   "author": "Andre L. Adriano",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.4",
     "eslint": "^5.11.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -21,5 +24,8 @@
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
   }
 }
