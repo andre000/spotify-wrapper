@@ -1,6 +1,6 @@
 {
   "name": "api-spotify",
-  "version": "0.5.1",
+  "version": "0.7.0",
   "description": "API wrapper for Spotify",
   "main": "src/index.js",
   "private": true,
