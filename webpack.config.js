@@ -5,6 +5,8 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd',
+    library: 'spotfyWrapper',
   },
   target: 'node',
   module: {
