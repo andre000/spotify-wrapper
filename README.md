@@ -1,5 +1,6 @@
 # API Spotify
 ![build](https://travis-ci.org/andre000/spotify-wrapper.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/andre000/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/andre000/spotify-wrapper?branch=master)
 
 Wrapper for the Spotify API.
 Project made for an assingment on the [JS com TDD na Prática](https://www.udemy.com/js-com-tdd-na-pratica/learn/v4/overview) course.
