@@ -85,7 +85,7 @@ typings/
 .dynamodb/
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/*.esignore
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -96,3 +96,5 @@ typings/
 .history
 
 # End of https://www.gitignore.io/api/node,visualstudiocode
+
+dist/*
