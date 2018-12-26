@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import * as Search from './search';
+import * as Album from './album';
 
 (async () => {
   try {
@@ -8,3 +10,8 @@ import * as Search from './search';
     console.log(err);
   }
 })();
+
+module.exports = {
+  Search,
+  Album,
+};
