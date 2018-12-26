@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "dev": "webpack-dev-server",
     "lint": "eslint . --fix",
