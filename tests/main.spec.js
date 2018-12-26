@@ -1,4 +1,4 @@
-
+import apiInstance from '../src/utils/apiInstance';
 import {
   search,
   searchAlbums,
@@ -28,5 +28,12 @@ describe('Spotify Wrapper', () => {
     it('should exist the `searchPlaylists` method', () => {
       expect(searchPlaylists).toBeTruthy();
     });
+  });
+});
+
+describe('API Instance', () => {
+  it('should have a defined Auth header and Base URL', () => {
+    expect(apiInstance.defaults.baseURL).toBeTruthy();
+    expect(apiInstance.defaults.headers.Authorization).toBeTruthy();
   });
 });

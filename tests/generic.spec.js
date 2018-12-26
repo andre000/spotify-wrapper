@@ -1,13 +1,13 @@
-import axios from 'axios';
+import apiInstance from '../src/utils/apiInstance';
 
 import { search } from '../src/search';
 
-jest.mock('axios');
+jest.mock('../src/utils/apiInstance');
 
 describe('Generic Search', () => {
   let spyGet;
   beforeEach(() => {
-    spyGet = jest.spyOn(axios, 'get');
+    spyGet = jest.spyOn(apiInstance, 'get');
   });
   afterEach(() => {
     spyGet.mockRestore();
@@ -21,7 +21,7 @@ describe('Generic Search', () => {
   describe('should receive the correct parameters to fetch', () => {
     it('for one type', () => {
       search('Mother Mother', 'artist');
-      expect(spyGet).toHaveBeenCalledWith('https://api.spotify.com/v1/search', {
+      expect(spyGet).toHaveBeenCalledWith('search', {
         params: {
           q: 'Mother Mother',
           type: 'artist',
@@ -31,7 +31,7 @@ describe('Generic Search', () => {
 
     it('for more than one type', () => {
       search('Mother Mother', ['artist', 'music']);
-      expect(spyGet).toHaveBeenCalledWith('https://api.spotify.com/v1/search', {
+      expect(spyGet).toHaveBeenCalledWith('search', {
         params: {
           q: 'Mother Mother',
           type: ['artist', 'music'],
@@ -41,7 +41,7 @@ describe('Generic Search', () => {
   });
 
   it('should return a JSON value', async () => {
-    axios.get.mockResolvedValue({ body: 'json' });
+    apiInstance.get.mockResolvedValue({ body: 'json' });
     const artist = await search('Mother Mother', 'artist');
     expect(artist).toEqual({ body: 'json' });
   });

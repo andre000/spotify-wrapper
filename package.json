@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
     "ramda": "^0.26.1"
   },
   "husky": {

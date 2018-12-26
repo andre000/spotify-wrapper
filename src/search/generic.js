@@ -1,7 +1,7 @@
-import axios from 'axios';
+import apiInstance from '../utils/apiInstance';
 
 export default async (query, type) => {
-  const response = await axios.get('https://api.spotify.com/v1/search', {
+  const response = await apiInstance.get('search', {
     params: {
       q: query,
       type,
