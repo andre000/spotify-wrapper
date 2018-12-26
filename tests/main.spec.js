@@ -1,5 +1,4 @@
-import axios from 'axios';
-
+import apiInstance from '../src/utils/apiInstance';
 import {
   search,
   searchAlbums,
@@ -7,8 +6,6 @@ import {
   searchTracks,
   searchPlaylists,
 } from '../src/search';
-
-jest.mock('axios');
 
 describe('Spotify Wrapper', () => {
   describe('Smoke Tests', () => {
@@ -32,16 +29,11 @@ describe('Spotify Wrapper', () => {
       expect(searchPlaylists).toBeTruthy();
     });
   });
+});
 
-  describe('Generic Search', () => {
-    it('should call an ajax function to the endpoint', () => {
-      const mockedResponse = {};
-      const spy = jest.spyOn(axios, 'get');
-
-      axios.get.mockResolvedValue(mockedResponse);
-      search();
-
-      expect(spy).toHaveBeenCalled();
-    });
+describe('API Instance', () => {
+  it('should have a defined Auth header and Base URL', () => {
+    expect(apiInstance.defaults.baseURL).toBeTruthy();
+    expect(apiInstance.defaults.headers.Authorization).toBeTruthy();
   });
 });
